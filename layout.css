@@ -1,0 +1,61 @@
+/*********mobil**********/
+@media (max-width: 840px) {
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 10px;
+  }
+  .big {
+    grid-column: 1 / span 2;
+  }
+}
+
+/*************desktop**************/
+@media (min-width: 840px) {
+  .grid_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .grid_1_1_1 > img {
+    width: 500px; /* Set the desired width */
+    height: 500px; /* Set the desired height */
+    object-fit: cover;
+  }
+
+  .grid_1_1_1 > .span {
+    grid-column: 1 / span 3;
+  }
+  .grid_1_2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid_1_2 > .flex_col {
+    flex: 1;
+  }
+
+  /* Move the APEX ARENA column to the right */
+  .grid_1_2 > .flex_col:first-child {
+    order: 2; /* Arena info */
+  }
+
+  /* Keep the Billet section first (on the left) */
+  .grid_1_2 > .flex_col:last-child {
+    order: 1; /* Billet tickets */
+  }
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+  }
+  /* Span last image */
+  .grid_1_1 .big {
+    grid-column: 1 / -1; /* spans all 3 columns */
+  }
+}
